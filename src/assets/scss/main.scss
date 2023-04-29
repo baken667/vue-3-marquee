@@ -1,0 +1,77 @@
+@import "_mixins.scss";
+@import "_colors.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: $dark;
+  color: $light;
+  font-family: "Oswald", sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background: linear-gradient(45deg, #EE0979, #FF6A00);
+  &__text {
+    font-weight: 700;
+    letter-spacing: -0.25rem;
+    width: min-content;
+    white-space: nowrap;
+    line-height: 1;
+    &:first-child,
+    &:last-child {
+      animation: marquee 40s linear 0s infinite;
+      animation-play-state: running;
+      animation-delay: 0s;
+      animation-direction: normal;
+    }
+
+    @include _sm {
+      font-size: 4rem;
+    }
+
+    @include _md {
+      font-size: 10rem;
+    }
+
+    @include _lg {
+      font-size: 10rem;
+    }
+
+    @include _xl {
+      font-size: 14rem;
+    }
+    
+    @include _2xl {
+      font-size: 18rem;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
