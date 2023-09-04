@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import MarqueeGsap from "./components/MarqueeGsap.vue";
+import GithubButton from "./components/GithubButton.vue";
+import Marquee from "./components/Marquee.vue";
 </script>
 
 <template>
   <div class="main">
     <div class="content">
-      <MarqueeGsap />
+      <GithubButton />
+      <Marquee />
     </div>
   </div>
 </template>

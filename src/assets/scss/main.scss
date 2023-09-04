@@ -26,17 +26,46 @@ body {
   gap: 1rem;
 }
 
+.github-button {
+  display: block;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: 1.25rem;
+  line-height: 1.3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transition: opacity .15s ease-in-out;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  img {
+    width: auto;
+    height: 2rem;
+  }
+
+  span {
+    color: $light;
+  }
+}
+
 .marquee {
   overflow: hidden;
   position: relative;
   display: flex;
   background: linear-gradient(45deg, #EE0979, #FF6A00);
+
   &__text {
     font-weight: 700;
     letter-spacing: -0.25rem;
     width: min-content;
     white-space: nowrap;
     line-height: 1;
+
     &:first-child,
     &:last-child {
       animation: marquee 40s linear 0s infinite;
@@ -60,7 +89,7 @@ body {
     @include _xl {
       font-size: 14rem;
     }
-    
+
     @include _2xl {
       font-size: 18rem;
     }
@@ -71,6 +100,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
